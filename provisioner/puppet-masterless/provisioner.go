@@ -296,7 +296,7 @@ func (p *Provisioner) uploadManifests(ui packer.Ui, comm packer.Communicator) (s
 
 func (p *Provisioner) createDir(ui packer.Ui, comm packer.Communicator, dir string) error {
 	cmd := &packer.RemoteCmd{
-		Command: fmt.Sprintf("mkdir -p '%s'", dir),
+		Command: fmt.Sprintf("mkdir '%s'", dir),
 	}
 
 	if err := cmd.StartWithUi(comm, ui); err != nil {
